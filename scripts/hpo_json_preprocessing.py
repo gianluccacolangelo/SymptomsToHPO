@@ -2,13 +2,12 @@
 import json
 import os
 from langchain.schema import Document
-from langchain.vectorstores import Chroma
+from langchain_community.vectorstores import Chroma
 from langchain_google_genai import GoogleGenerativeAIEmbeddings
-import openai
 import getpass
 
-if "GEMINI_API_KEY" not in os.environ:
-    os.environ["GEMINI_API_KEY"] = getpass("Provide your Google API key here")
+if "GOOGLE_API_KEY" not in os.environ:
+    os.environ["GOOGLE_API_KEY"] = getpass("Provide your Google API key here")
 
 
 current_script_dir = os.path.dirname(os.path.abspath(__file__))
